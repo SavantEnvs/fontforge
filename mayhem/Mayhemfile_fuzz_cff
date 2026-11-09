@@ -1,0 +1,9 @@
+project: savantenvs/fontforge
+target: fuzz_cff
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_cff/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_cff
+    libfuzzer: true
+    timeout: 30

@@ -1,0 +1,9 @@
+project: savantenvs/fontforge
+target: fuzz_ttf-mined-9a0002b
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_ttf-mined-9a0002b/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_ttf
+    libfuzzer: true
+    timeout: 30

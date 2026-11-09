@@ -1,0 +1,9 @@
+project: savantenvs/fontforge
+target: fuzz_bitmap
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_bitmap/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_bitmap
+    libfuzzer: true
+    timeout: 30

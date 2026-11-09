@@ -1,0 +1,9 @@
+project: savantenvs/fontforge
+target: fuzz_pdf
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_pdf/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_pdf
+    libfuzzer: true
+    timeout: 30

@@ -1,0 +1,10 @@
+# seed-from: https://app.mayhem.security/savantenvs/fontforge/fuzz-macfont
+project: savantenvs/fontforge
+target: fuzz_macfont-mined-d01333a
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_macfont-mined-d01333a/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_macfont
+    libfuzzer: true
+    timeout: 30

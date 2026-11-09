@@ -1,0 +1,12 @@
+# usage: fontforge -lang=ff -script probe.ff <font> <glyph-name> [<generate-as>]
+Open($1)
+Print("KAT font=", $fontname, " family=", $familyname)
+Select($2)
+Print("KAT glyph=", GlyphInfo("Name"), " width=", GlyphInfo("Width"), " bbox=", GlyphInfo("BBox")[0], ",", GlyphInfo("BBox")[1], ",", GlyphInfo("BBox")[2], ",", GlyphInfo("BBox")[3])
+if ($argc > 3)
+  Generate($3)
+  Close()
+  Open($3)
+  Select($2)
+  Print("KAT regen glyph=", GlyphInfo("Name"), " width=", GlyphInfo("Width"), " bbox=", GlyphInfo("BBox")[0], ",", GlyphInfo("BBox")[1], ",", GlyphInfo("BBox")[2], ",", GlyphInfo("BBox")[3])
+endif
